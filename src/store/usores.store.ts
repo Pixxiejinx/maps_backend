@@ -24,11 +24,12 @@ export class UsoresStore{
 
     }
 
-    delere(socketId: string){
-        this.state.perId.delete(socketId);
+    delere(socketId: string) : boolean{
+         this.state.perId.delete(socketId);
+         return true;
     }
 
-    obtinere(socketId: string){
+    obtinere(socketId: string): Usor | undefined{
         return this.state.perId.get(socketId);
     }
 
@@ -36,7 +37,7 @@ export class UsoresStore{
         return Array.from(this.state.perId.values());
     }
 
-    obtinereAlios(sockerId: string): Usor[]{
-        return this.obtinerOmnes().filter((usor) => usor.id !== sockerId);
+    obtinereAlios(socketId: string): Usor[]{
+        return this.obtinerOmnes().filter((usor) => usor.id !== socketId);
     }
 }
