@@ -1,0 +1,3 @@
+[submodule "maps_backend"]
+	path = maps_backend
+	url = https://github.com/Pixxiejinx/maps_backend.git
